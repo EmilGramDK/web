@@ -93,7 +93,8 @@ export const eslintConfig = {
     "no-await-in-loop": "error",
     "sonarjs/no-nested-template-literals": "warn",
     "max-lines-per-function": ["error", { max: 100, skipBlankLines: true, skipComments: true }],
-
+    "max-lines": ["error", { max: 250, skipBlankLines: true }],
+    
     /* Performance */
     "unicorn/prefer-regexp-test": "error",
   },
