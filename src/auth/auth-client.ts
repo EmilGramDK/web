@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { getCookie, setCookie, removeCookie } from "typescript-cookie";
 import { extractInfoFromToken, type TokenInfo } from "./jwt";
 
