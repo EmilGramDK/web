@@ -8,7 +8,7 @@ type Failure<E> = {
   error: E;
 };
 
-type Result<T, E = Error> = Success<T> | Failure<E>;
+export type Result<T, E = Error> = Success<T> | Failure<E>;
 
 /**
  * A function that wraps a promise in a try-catch block.

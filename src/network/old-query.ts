@@ -32,6 +32,7 @@ export const setQueryFetcher = (fetcher: Fetcher) => {
  * @param key - The unique key for the query.
  * @param endpoint - The API endpoint to fetch data from.
  * @param options - Additional options for the fetch request.
+ * @param options.timeout - The time in milliseconds to wait before aborting the request.
  * @param options.cacheTime - The time in milliseconds to cache the response.
  * - If cacheTime is provided, and the query is repeated within that time, the cached response will be returned.
  * - Defaults to no caching.
@@ -89,6 +90,11 @@ export const abortAllQueries = (): void => {
   abortControllers.clear();
 };
 
+export const clearCached = (key?: string) => {
+  if (key) return cache.delete(key);
+  cache.clear();
+};
+
 const createSignal = (key: string, timeout?: number): AbortSignal => {
   const controller = new AbortController();
   abortControllers.set(key, controller);
@@ -122,3 +128,5 @@ const getCachedData = <T>(key: string): T | undefined => {
 const cacheData = <T>(key: string, data: T, ttl: number) => {
   cache.set(key, [Date.now() + ttl, data]);
 };
+
+window.addEventListener("unload", abortAllQueries);
