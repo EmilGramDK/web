@@ -67,13 +67,6 @@ export const eslintConfig = {
     "no-console": ["off", { allow: ["warn", "error"] }],
 
     /* Style */
-    "no-restricted-syntax": [
-      "warn",
-      {
-        selector: "ExportDefaultDeclaration",
-        message: "Prefer named exports",
-      },
-    ],
     "@typescript-eslint/array-type": ["warn", { default: "generic" }],
     "@typescript-eslint/no-redeclare": ["error"],
     "@typescript-eslint/consistent-type-imports": "warn",
@@ -97,5 +90,19 @@ export const eslintConfig = {
 
     /* Performance */
     "unicorn/prefer-regexp-test": "error",
+
+    "no-restricted-syntax": [
+      "error",
+      {
+        selector:
+          "CallExpression[callee.property.name='forEach'] > ArrowFunctionExpression[async=true]",
+        message: "Don't use async functions inside forEach — use for...of or Promise.all instead.",
+      },
+      "warn",
+      {
+        selector: "ExportDefaultDeclaration",
+        message: "Prefer named exports",
+      },
+    ],
   },
 } as unknown as Config;
