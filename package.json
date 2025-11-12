@@ -1,6 +1,6 @@
 {
   "name": "@emilgramdk/web",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "Utilities for web development with TypeScript.",
   "license": "ISC",
   "author": "EmilGramDK <hi@emilgram.dk> (https://emilgram.dk)",
