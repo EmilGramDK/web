@@ -68,7 +68,7 @@ export const eslintConfig = {
 
     /* Style */
     "@typescript-eslint/array-type": ["warn", { default: "generic" }],
-    "@typescript-eslint/no-redeclare": ["error"],
+    "@typescript-eslint/no-redeclare": ["off"],
     "@typescript-eslint/consistent-type-imports": "warn",
     "unicorn/consistent-function-scoping": "warn",
     "unicorn/prefer-default-parameters": "error",
@@ -78,6 +78,7 @@ export const eslintConfig = {
     "unicorn/no-array-for-each": "off",
     "no-unused-expressions": ["error", { allowTaggedTemplates: true }],
     "sonarjs/no-commented-code": "warn",
+    "sonarjs/todo-tag": "warn",
 
     /* Correctness */
     "no-const-assign": "error",

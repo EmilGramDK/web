@@ -6,6 +6,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": ["^(node:)?os$"],
   "files.associations": {
     "*.css": "tailwindcss",
     "*.scss": "tailwindcss"
