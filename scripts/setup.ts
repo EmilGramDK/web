@@ -9,17 +9,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = process.cwd();
 
 const devDependencies = [
-  "@stylistic/eslint-plugin",
-  "eslint-plugin-import-x",
-  "eslint-plugin-perfectionist",
-  "eslint-plugin-solid",
-  "eslint-plugin-sonarjs",
-  "eslint-plugin-unicorn",
-  "eslint",
-  "globals",
-  "prettier",
-  "typescript",
-  "typescript-eslint",
+  // "@stylistic/eslint-plugin",
+  // "eslint-plugin-import-x",
+  // "eslint-plugin-perfectionist",
+  // "eslint-plugin-solid",
+  // "eslint-plugin-sonarjs",
+  // "eslint-plugin-unicorn",
+  // "eslint",
+  // "globals",
+  // "prettier",
+  // "typescript",
+  // "typescript-eslint",
 ];
 
 const configFiles = [
@@ -68,12 +68,13 @@ async function copyConfigs() {
 
 async function updateTSConfig() {
   let tsconfigPath: string = path.join(root, "tsconfig.json");
+
   let json = {
     extends: tsconfig,
     compilerOptions: {
       baseUrl: "./",
       paths: {
-        "@*": ["./src/*"],
+        "@/*": ["./src/*"],
       },
       types: ["vite/client"],
     },
