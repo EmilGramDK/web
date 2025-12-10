@@ -264,7 +264,7 @@ class AuthClientClass {
     const refreshToken = getCookie(`${this.config.storageKey}_refresh`);
     if (!accessToken) return false;
     this.setTokens(accessToken, refreshToken);
-    return true;
+    return this.isTokenValid();
   }
 
   private isTokenValid(): boolean {
